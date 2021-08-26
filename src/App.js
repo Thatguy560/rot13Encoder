@@ -24,7 +24,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Peter's File Reader</h1>
+      <h1>Peter's Rot13 Encoder</h1>
       <input type="file" onChange={handleFileChange}></input>
       <p>{rot13(fileContents)}</p>
     </div>
