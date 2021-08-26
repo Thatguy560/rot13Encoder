@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useState } from "react";
 
 function App() {
+  const [fileContents, setFileContents] = useState("");
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    const read = new FileReader();
+    read.readAsBinaryString(file);
+    read.onloadend = () => {
+      setFileContents(read.result);
+    };
+  };
+
+  const rot13 = (message) => {
+    const alphabetToCipher =
+      "abcdefghijklmnopqrstuvwxyzabcdefghijklmABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLM";
+    return message.replace(
+      /[a-z]/gi,
+      (letter) => alphabetToCipher[alphabetToCipher.indexOf(letter) + 13]
+    );
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Peter's File Reader</h1>
+      <input type="file" onChange={handleFileChange}></input>
+      <p>{rot13(fileContents)}</p>
     </div>
   );
 }
