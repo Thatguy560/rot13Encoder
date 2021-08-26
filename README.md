@@ -4,7 +4,7 @@
 
 ROT13 is a simple letter substitution cipher that replaces a letter with the 13th letter after it in the alphabet. 
 
-This simple encoder was made as part of a technical assessment, once loaded you can upload a text file of your choosing and it will replace all the contents of that file with simple letter substitution.
+This simple encoder was made as part of a technical assessment, once loaded you can upload a text file of your choosing and it will replace all the contents of that file with a simple letter substitution.
 
 # Installation + How To Run
 
@@ -14,8 +14,8 @@ This simple encoder was made as part of a technical assessment, once loaded you 
 
 3. cd into 'rot13Encoder' (Change directory's)
 
-4. Install node.js and run npm install in command line to install all dependencies
+4. Install node.js and run "npm install" to install all dependencies
 
-5. type "npm start" to start app.
+5. type "npm start" to start the app.
 
 6. This should then automatically open the app on your browser, however if it doesn't just open up any browser of your choosing and type in the url "http://localhost:3000/".
